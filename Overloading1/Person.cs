@@ -9,41 +9,23 @@ namespace Overloading1
     public class Person
     {
         public string name;
-        public List<string> Names { get; set; }
-        public List<string> IDS { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-
-        public void SayName()
-        {
-            string firstName = "Sample", lastName = "Student";
-            Console.WriteLine("Full name is: " + firstName + " " + lastName);
-        }
     }
 
     public class Employee : Person
     {
-        int ID;
+        public int ID;
+        public int n;
+        public bool status = false;
 
-        public static bool operator== (Employee iD1, Employee iD2)
+        public static bool operator ==(Employee iD1, Employee iD2)
         {
-            bool status = false;
-            if (iD1 == iD2)
-            {
-
-                status = true;
-            }
-            return status;
+            if (iD1.ID == iD2.ID) return true;
+            else return false;
         }
-        public static bool operator!= (Employee iD1, Employee iD2)
+        public static bool operator !=(Employee iD1, Employee iD2)
         {
-            bool status = false;
-            if (iD1 != iD2)
-            {
-
-                status = false;
-            }
-            return status;
+            if (iD1.ID != iD2.ID) return true;
+            else return false;
         }
     }
 }
